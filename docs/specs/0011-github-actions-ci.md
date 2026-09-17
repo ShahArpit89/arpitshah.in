@@ -1,5 +1,5 @@
 ---
-status: Planned
+status: In Progress
 branch: spec/0011-github-actions-ci
 prd_ref: none
 ---
@@ -14,7 +14,7 @@ Add automated quality gates (lint, typecheck, build, format) on every PR and pus
 
 **In:**
 
-- `.github/workflows/ci.yml`: one workflow, triggered on `pull_request` (base `main`) and `push` to `main` — steps: checkout, `actions/setup-node` (pinned LTS version, npm cache), `npm ci`, then `npm run lint`, `npm run typecheck`, `npm run build`, `npm run format:check`
+- `.github/workflows/ci.yml`: one workflow, triggered on `pull_request` (base `main`) and `push` to `main` — steps: checkout, `actions/setup-node` (`node-version: lts/*`, npm cache), `npm ci`, then `npm run lint`, `npm run typecheck`, `npm run build`, `npm run format:check`
 - Add `"format:check": "prettier --check ."` to `package.json` scripts — the existing `format` script writes, CI needs a non-mutating check
 - Concurrency group so a new push cancels a superseded run for the same PR/branch
 - `.github/dependabot.yml`: weekly update PRs for the `npm` ecosystem and the `github-actions` ecosystem (so the workflow's own action versions stay current), targeting `main`
@@ -29,7 +29,7 @@ Add automated quality gates (lint, typecheck, build, format) on every PR and pus
 
 ## Approach
 
-Single job, sequential steps (not parallel jobs) — repo is small enough that splitting lint/typecheck/build/format into separate jobs would just add queue overhead without a real speed win. `npm ci` (not `npm install`) for reproducible installs from `package-lock.json`. Node version pinned explicitly in the workflow file since CI needs determinism even though local dev intentionally isn't pinned (no `.nvmrc`, per CLAUDE.md).
+Single job, sequential steps (not parallel jobs) — repo is small enough that splitting lint/typecheck/build/format into separate jobs would just add queue overhead without a real speed win. `npm ci` (not `npm install`) for reproducible installs from `package-lock.json`. CI uses `node-version: lts/*` rather than a hard-pinned number — consistent with the project's own "whatever's current" Node policy (no `.nvmrc`, per CLAUDE.md) while still staying on an LTS release rather than tracking bleeding-edge current.
 
 Dependabot config groups minor/patch npm updates to reduce PR noise where reasonable; major version bumps still get their own PR since those can be breaking (Next.js, React, Tailwind major bumps need eyes-on review, not auto-merge).
 
