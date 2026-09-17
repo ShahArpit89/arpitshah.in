@@ -37,12 +37,12 @@ Branch protection itself can't be expressed as a repo file — it's configured i
 
 ## Acceptance criteria
 
-- [ ] `.github/workflows/ci.yml` exists and runs lint/typecheck/build/format-check on every PR against `main` and every push to `main`
-- [ ] A deliberately broken PR (lint error, type error, or unformatted file) shows a failing check
-- [ ] A clean PR shows all steps passing
-- [ ] `format:check` script added to `package.json`; existing `format` script's write behavior unchanged
-- [ ] `.github/dependabot.yml` exists for `npm` and `github-actions` ecosystems, weekly schedule
-- [ ] Arpit has enabled branch protection on `main` requiring the CI check before merge (manual, confirmed after merge — not blocking the PR itself, since the check can't be required until it exists on at least one run)
+- [x] `.github/workflows/ci.yml` exists and runs lint/typecheck/build/format-check on every PR against `main` and every push to `main`
+- [ ] A deliberately broken PR (lint error, type error, or unformatted file) shows a failing check — not yet exercised; implied by the passing run but not directly tested
+- [x] A clean PR shows all steps passing — verified on [PR #5](https://github.com/ShahArpit89/arpitshah.in/pull/5), run [35288755824](https://github.com/ShahArpit89/arpitshah.in/actions/runs/35288755824), conclusion `success`
+- [x] `format:check` script added to `package.json`; existing `format` script's write behavior unchanged
+- [x] `.github/dependabot.yml` exists for `npm` and `github-actions` ecosystems, weekly schedule
+- [ ] Arpit has enabled branch protection on `main` requiring the CI check before merge (manual, still outstanding — the check now exists on `main` and is selectable)
 
 ## Dependencies
 
