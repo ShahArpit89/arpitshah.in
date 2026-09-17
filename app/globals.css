@@ -1,0 +1,145 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens ported from design/homepage-mockup.html — see
+ * design/DESIGN-SYSTEM.md for the full token table and rationale.
+ * Raw values live on :root / dark selectors; @theme inline maps them to
+ * Tailwind utilities (bg-paper, text-flare, font-display, ...).
+ */
+:root {
+  --paper: #f4f1ea;
+  --paper-raised: #ffffff;
+  --ink: #15161a;
+  --ink-soft: #6c7066;
+  --line: #ded8ca;
+  --flare: #c22a5c;
+  --flare-ink: #fff0f4;
+  --gold: #b9812f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #131315;
+    --paper-raised: #1b1b1e;
+    --ink: #efece4;
+    --ink-soft: #98988e;
+    --line: #302f2c;
+    --flare: #ef5c86;
+    --flare-ink: #2a0410;
+    --gold: #dba75a;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #131315;
+  --paper-raised: #1b1b1e;
+  --ink: #efece4;
+  --ink-soft: #98988e;
+  --line: #302f2c;
+  --flare: #ef5c86;
+  --flare-ink: #2a0410;
+  --gold: #dba75a;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-flare: var(--flare);
+  --color-flare-ink: var(--flare-ink);
+  --color-gold: var(--gold);
+
+  --font-display:
+    var(--font-instrument-serif), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-karla), -apple-system, Helvetica, Arial, sans-serif;
+  --font-mono:
+    var(--font-fragment-mono), ui-monospace, Menlo, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--flare);
+  color: var(--flare-ink);
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2%, -3%) scale(1.04);
+  }
+}
+
+.blob {
+  background: radial-gradient(closest-side, var(--flare), transparent 72%);
+  opacity: 0.16;
+  filter: blur(38px);
+  animation: drift 22s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}
+
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+/* .frame-zoom tiles render real photos via next/image (<img>), not the
+   mockup's inline <svg> placeholders — both selectors are kept so hover-zoom
+   doesn't silently break the moment placeholders are swapped for real photos. */
+.frame-zoom img,
+.frame-zoom svg {
+  transition: transform 0.5s ease;
+}
+
+.frame-zoom:hover img,
+.frame-zoom:hover svg {
+  transform: scale(1.06);
+}
+
+.underline-grow {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-grow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transition: right 0.25s ease;
+}
+
+.underline-grow:hover::after {
+  right: 0;
+}

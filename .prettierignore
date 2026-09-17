@@ -1,0 +1,14 @@
+.next
+node_modules
+package-lock.json
+
+# Prettier's markdown parser mangles MDX comment syntax ({/* */} -> {/_ _/}),
+# corrupting the file. No dedicated MDX parser is installed, so leave these
+# alone — they're prose content, not code that needs consistent formatting.
+**/*.mdx
+
+# Frozen reference docs — PRD.md and design/ are hand-maintained source of
+# truth (see .claude/skills/git-workflow), not build output. Don't let a repo-
+# wide `format` run silently reformat them as a side effect.
+PRD.md
+design/**
