@@ -10,7 +10,7 @@ const links = [
 
 // Plain Tailwind utilities directly on elements, no hand-rolled scoped CSS
 // class for the header — sidesteps the .masthead-nav double-border
-// regression documented in design/DESIGN-SYSTEM.md watch-item #1 structurally
+// regression documented in docs/DESIGN-SYSTEM.md watch-item #1 structurally
 // rather than by remembering one selector name.
 export default function Nav() {
   return (

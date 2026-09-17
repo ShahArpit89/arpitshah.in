@@ -26,7 +26,7 @@ fix(nav): scope header divider to .masthead .nav
 .masthead nav (descendant selector on the bare tag) was also matching
 a nested <nav> used inside the mobile menu, doubling the hairline
 border. Scoping to the .nav class instead makes the rule specific to
-the header's own nav element. See design/DESIGN-SYSTEM.md watch-item 1.
+the header's own nav element. See docs/DESIGN-SYSTEM.md watch-item 1.
 ```
 
 Not:

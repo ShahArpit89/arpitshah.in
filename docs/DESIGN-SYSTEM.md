@@ -1,6 +1,6 @@
 # arpitshah.in — Design System
 
-Source of truth: [`design/homepage-mockup.html`](./homepage-mockup.html) (Version 4, "Signal"), finalized per [PRD.md](../PRD.md) §4. This document is the baseline for every subpage — Portfolio, Projects, Blog, Photography must read as the same product, not four skins.
+Source of truth: [`design/homepage-mockup.html`](../design/homepage-mockup.html) (Version 4, "Signal"), finalized per [PRD.md](PRD.md) §4. This document is the baseline for every subpage — Portfolio, Projects, Blog, Photography must read as the same product, not four skins.
 
 Status: pre-implementation. No components exist in code yet — this documents the mockup so the tokens/patterns port 1:1 into Tailwind config + React components rather than getting reinvented per page.
 

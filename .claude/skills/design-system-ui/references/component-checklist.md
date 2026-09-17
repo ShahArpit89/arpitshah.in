@@ -1,6 +1,6 @@
 # Pre-PR Component Checklist
 
-Condensed from design/DESIGN-SYSTEM.md's Do's/Don'ts tables — run through this before opening a PR that touches UI.
+Condensed from docs/DESIGN-SYSTEM.md's Do's/Don'ts tables — run through this before opening a PR that touches UI.
 
 - [ ] No hardcoded hex colors — token utilities only (`bg-paper`, `text-flare`, etc.)
 - [ ] No `dark:` variant used on a token color

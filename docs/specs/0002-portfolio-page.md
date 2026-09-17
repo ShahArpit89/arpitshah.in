@@ -16,7 +16,7 @@ Replace the `/portfolio` stub with real content: role, experience, skills, case 
 
 - Real copy for role/experience/skills sections
 - At least one case study (structure + one real example)
-- Layout consistent with design/DESIGN-SYSTEM.md (reuse existing components/patterns where they fit)
+- Layout consistent with docs/DESIGN-SYSTEM.md (reuse existing components/patterns where they fit)
 
 **Out:**
 

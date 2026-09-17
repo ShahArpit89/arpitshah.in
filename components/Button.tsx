@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 // Hover treatment (opacity-90, transition-opacity) was undefined in the
-// mockup — decided here per design/DESIGN-SYSTEM.md's flagged gap; that doc
+// mockup — decided here per docs/DESIGN-SYSTEM.md's flagged gap; that doc
 // has been updated to record this as the resolved decision.
 export default function Button({
   href,

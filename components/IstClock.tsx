@@ -13,7 +13,7 @@ function formatIst(date: Date): string {
 }
 
 // Decorative authentic detail, not an announcement — screen readers should
-// skip the per-second churn (see design/DESIGN-SYSTEM.md, Hero accessibility).
+// skip the per-second churn (see docs/DESIGN-SYSTEM.md, Hero accessibility).
 export default function IstClock() {
   const [text, setText] = useState<string | null>(null)
 

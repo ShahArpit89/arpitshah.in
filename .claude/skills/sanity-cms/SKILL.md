@@ -7,7 +7,7 @@ description: Schema fields, image URL builder usage, and ISR/revalidation conven
 
 ## Status: spec-derived, not project-verified
 
-Written before the real Sanity project exists ([PRD.md §7](../../../PRD.md) item 3). Everything below is derived from the PRD spec, not confirmed against a live project. Re-verify before treating any of it as final — see the checklist at the bottom.
+Written before the real Sanity project exists ([PRD.md §7](../../../docs/PRD.md) item 3). Everything below is derived from the PRD spec, not confirmed against a live project. Re-verify before treating any of it as final — see the checklist at the bottom.
 
 PRD.md §8 explicitly leaves the `/studio` embed-vs-subdomain choice undecided. **Don't resolve that non-decision in code.** `app/studio/[[...tool]]/page.tsx` is deliberately not scaffolded. If something must compile against a Studio route, use the embedded path as an explicitly-commented provisional default (lower setup cost, easiest to delete) — never silently commit to one option.
 

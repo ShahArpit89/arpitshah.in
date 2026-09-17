@@ -7,8 +7,11 @@ package-lock.json
 # alone — they're prose content, not code that needs consistent formatting.
 **/*.mdx
 
-# Frozen reference docs — PRD.md and design/ are hand-maintained source of
-# truth (see .claude/skills/git-workflow), not build output. Don't let a repo-
-# wide `format` run silently reformat them as a side effect.
-PRD.md
+# Frozen reference docs — hand-maintained source of truth (see
+# .claude/skills/git-workflow), not build output. Don't let a repo-wide
+# `format` run silently reformat them as a side effect. docs/specs/ is NOT
+# included — specs are expected to be edited often (status updates, checked
+# boxes) and should stay consistently formatted like any other doc.
+docs/PRD.md
+docs/DESIGN-SYSTEM.md
 design/**
