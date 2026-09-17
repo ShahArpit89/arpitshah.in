@@ -1,0 +1,8 @@
+<type>(<scope>): <imperative, present-tense subject, ≤72 chars, no trailing period>
+
+<Optional body. Wrap at ~72 columns. Explain WHY this change exists —
+the constraint, decision, or PRD section behind it — not what the diff
+already shows. Skip the body entirely for genuinely self-explanatory
+changes (e.g. "docs(prd): fix typo in site map table").>
+
+<Optional footer: Fixes #N / Refs #N / BREAKING CHANGE: ...>
