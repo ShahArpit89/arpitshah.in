@@ -64,7 +64,7 @@ The test: could you revert this single commit cleanly without dragging in an unr
 
 ## Branch naming
 
-For anything with a spec (see [spec-driven-dev](../spec-driven-dev/SKILL.md) — most non-trivial work): `spec/NNNN-slug`, matching the spec file's own name in `specs/`.
+For anything with a spec (see [spec-driven-dev](../spec-driven-dev/SKILL.md) — most non-trivial work): `spec/NNNN-slug`, matching the spec file's own name in `docs/specs/`.
 
 For genuinely spec-less work (a one-line fix, a config tweak): `<type>/<short-description>`, matching the commit type vocabulary above — `fix/nav-double-border`, `chore/update-gitignore`. Kebab-case, no ticket-number-only names (a branch called `fix/123` tells a reader nothing six months later).
 

@@ -10,7 +10,7 @@ Three documents are the source of truth — this file orients you to them, it do
 
 ## How work happens here
 
-This project develops step by step from written specs, not big batched changes — see [.claude/skills/spec-driven-dev/SKILL.md](.claude/skills/spec-driven-dev/SKILL.md). Before starting any non-trivial task: check [specs/README.md](specs/README.md) for current status (what's Done vs Planned), write a spec if one doesn't exist yet, get it confirmed, then implement only that spec's scope on a matching `spec/NNNN-slug` branch. Don't batch multiple specs into one PR.
+This project develops step by step from written specs, not big batched changes — see [.claude/skills/spec-driven-dev/SKILL.md](.claude/skills/spec-driven-dev/SKILL.md). Before starting any non-trivial task: check [docs/specs/README.md](docs/specs/README.md) for current status (what's Done vs Planned), write a spec if one doesn't exist yet, get it confirmed, then implement only that spec's scope on a matching `spec/NNNN-slug` branch. Don't batch multiple specs into one PR.
 
 ## Running it
 
@@ -34,8 +34,7 @@ Node version: whatever's current when you run it (no `.nvmrc` pinned yet). Packa
 | `content/`        | Blog MDX + `projects.json` (git-based content)      |
 | `lib/`            | `fonts.ts`, `mdx.ts`, `sanity.ts`, `projects.ts`    |
 | `design/`         | Finalized reference mockup (`homepage-mockup.html`) |
-| `docs/`           | `PRD.md`, `DESIGN-SYSTEM.md`                        |
-| `specs/`          | One spec per task — see spec-driven-dev below       |
+| `docs/`           | `PRD.md`, `DESIGN-SYSTEM.md`, `specs/`              |
 | `.claude/skills/` | Project-specific Claude skills (this list, below)   |
 
 ## Building UI

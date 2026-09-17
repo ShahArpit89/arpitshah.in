@@ -9,14 +9,14 @@ This repo was built once as one large batched PR (0001-nextjs-scaffold) and it c
 
 ## The rule
 
-**Every task gets a spec file before implementation starts.** A spec is short — goal, scope in/out, approach, acceptance criteria — not a design document. See [../../../specs/TEMPLATE.md](../../../specs/TEMPLATE.md).
+**Every task gets a spec file before implementation starts.** A spec is short — goal, scope in/out, approach, acceptance criteria — not a design document. See [../../../docs/specs/TEMPLATE.md](../../../docs/specs/TEMPLATE.md).
 
-1. Create `specs/NNNN-slug.md` from the template (`NNNN` = next number, `slug` = kebab-case short name).
+1. Create `docs/specs/NNNN-slug.md` from the template (`NNNN` = next number, `slug` = kebab-case short name).
 2. Get it confirmed before writing code — even a one-line "yes, that scope is right" from Arpit. A spec nobody agreed to is just a plan you wrote for yourself.
 3. Create branch `spec/NNNN-slug` — matching the spec file's own name, so branch and spec are always traceable to each other.
 4. Implement **only what the spec's Scope section says is in.** If you discover the task is bigger than the spec assumed, stop and split it into a follow-up spec rather than quietly expanding scope mid-implementation.
 5. Open a PR from that branch. Keep it small enough to actually review — if a spec's implementation is inherently large, that's a signal the spec itself should have been split into smaller specs, not that the PR should just be big.
-6. Update the spec's `status` frontmatter (Planned → In Progress → Done) and [specs/README.md](../../../specs/README.md)'s index as work progresses.
+6. Update the spec's `status` frontmatter (Planned → In Progress → Done) and [docs/specs/README.md](../../../docs/specs/README.md)'s index as work progresses.
 
 ## What counts as "a task"
 
@@ -32,4 +32,4 @@ Roughly: anything that would otherwise become its own PR. A single-line typo fix
 ## Relationship to other conventions
 
 - Branch naming here (`spec/NNNN-slug`) supersedes [git-workflow](../git-workflow/SKILL.md)'s more general `<type>/<short-description>` pattern for anything that has a spec. Git-workflow's commit-message and squash-merge conventions still apply unchanged on top of this.
-- [specs/0001-nextjs-scaffold.md](../../../specs/0001-nextjs-scaffold.md) is the retroactive record of everything built before this workflow existed, and is the reference example for "done" spec status.
+- [docs/specs/0001-nextjs-scaffold.md](../../../docs/specs/0001-nextjs-scaffold.md) is the retroactive record of everything built before this workflow existed, and is the reference example for "done" spec status.

@@ -1,6 +1,6 @@
 # Specs
 
-One markdown file per unit of work, written _before_ implementation starts. This is how this project does spec-driven development — see [.claude/skills/spec-driven-dev/SKILL.md](../.claude/skills/spec-driven-dev/SKILL.md) for the full workflow (when to write one, branch naming, PR size expectations).
+One markdown file per unit of work, written _before_ implementation starts. This is how this project does spec-driven development — see [.claude/skills/spec-driven-dev/SKILL.md](../../.claude/skills/spec-driven-dev/SKILL.md) for the full workflow (when to write one, branch naming, PR size expectations).
 
 ## Index
 
