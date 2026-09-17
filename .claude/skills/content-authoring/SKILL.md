@@ -7,7 +7,7 @@ description: How to add or edit a blog post, project, or photo on arpitshah.in �
 
 ## Overview
 
-Hybrid content model (see [PRD.md §3](../../../PRD.md) for full rationale): blog posts and projects are git-based flat files, photography goes through Sanity.io. Blog/projects go live on `git push` (Vercel auto-deploy, ~1 min); photography goes live on Studio publish, no redeploy.
+Hybrid content model (see [PRD.md §3](../../../docs/PRD.md) for full rationale): blog posts and projects are git-based flat files, photography goes through Sanity.io. Blog/projects go live on `git push` (Vercel auto-deploy, ~1 min); photography goes live on Studio publish, no redeploy.
 
 ## Adding a blog post
 

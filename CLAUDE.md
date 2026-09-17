@@ -4,8 +4,8 @@ Personal site: software engineer portfolio, wildlife photography, and a blog spa
 
 Three documents are the source of truth — this file orients you to them, it doesn't repeat them:
 
-- **Product/content decisions** → [PRD.md](PRD.md)
-- **Visual system** (tokens, type, components) → [design/DESIGN-SYSTEM.md](design/DESIGN-SYSTEM.md)
+- **Product/content decisions** → [docs/PRD.md](docs/PRD.md)
+- **Visual system** (tokens, type, components) → [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md)
 - **Git conventions** (commits, branches, PRs) → [.claude/skills/git-workflow/SKILL.md](.claude/skills/git-workflow/SKILL.md)
 
 ## How work happens here
@@ -27,18 +27,20 @@ Node version: whatever's current when you run it (no `.nvmrc` pinned yet). Packa
 
 ## Where things live
 
-| Path              | What                                              |
-| ----------------- | ------------------------------------------------- |
-| `app/`            | Routes (App Router)                               |
-| `components/`     | Shared UI components                              |
-| `content/`        | Blog MDX + `projects.json` (git-based content)    |
-| `lib/`            | `fonts.ts`, `mdx.ts`, `sanity.ts`, `projects.ts`  |
-| `design/`         | Finalized mockup + design system doc              |
-| `.claude/skills/` | Project-specific Claude skills (this list, below) |
+| Path              | What                                                |
+| ----------------- | --------------------------------------------------- |
+| `app/`            | Routes (App Router)                                 |
+| `components/`     | Shared UI components                                |
+| `content/`        | Blog MDX + `projects.json` (git-based content)      |
+| `lib/`            | `fonts.ts`, `mdx.ts`, `sanity.ts`, `projects.ts`    |
+| `design/`         | Finalized reference mockup (`homepage-mockup.html`) |
+| `docs/`           | `PRD.md`, `DESIGN-SYSTEM.md`                        |
+| `specs/`          | One spec per task — see spec-driven-dev below       |
+| `.claude/skills/` | Project-specific Claude skills (this list, below)   |
 
 ## Building UI
 
-Consult [.claude/skills/design-system-ui](/.claude/skills/design-system-ui/SKILL.md) before adding or editing anything visible. The one rule worth repeating here because it's an easy habit to slip into: **never hardcode a hex color, and never use Tailwind's `dark:` variant on token colors** — theming is entirely the CSS-variable layer in `app/globals.css` (light/dark/OS-driven, per `design/DESIGN-SYSTEM.md`).
+Consult [.claude/skills/design-system-ui](/.claude/skills/design-system-ui/SKILL.md) before adding or editing anything visible. The one rule worth repeating here because it's an easy habit to slip into: **never hardcode a hex color, and never use Tailwind's `dark:` variant on token colors** — theming is entirely the CSS-variable layer in `app/globals.css` (light/dark/OS-driven, per `docs/DESIGN-SYSTEM.md`).
 
 ## Adding content
 

@@ -7,8 +7,8 @@ package-lock.json
 # alone — they're prose content, not code that needs consistent formatting.
 **/*.mdx
 
-# Frozen reference docs — PRD.md and design/ are hand-maintained source of
+# Frozen reference docs — docs/ and design/ are hand-maintained source of
 # truth (see .claude/skills/git-workflow), not build output. Don't let a repo-
 # wide `format` run silently reformat them as a side effect.
-PRD.md
+docs/**
 design/**

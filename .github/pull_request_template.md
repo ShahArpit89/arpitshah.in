@@ -9,7 +9,7 @@
 
 ## Testing
 
-<How you verified it. For anything touching layout/design, include before/after screenshots — this is a visually-designed site (see design/DESIGN-SYSTEM.md), so "it compiles" isn't sufficient evidence.>
+<How you verified it. For anything touching layout/design, include before/after screenshots — this is a visually-designed site (see docs/DESIGN-SYSTEM.md), so "it compiles" isn't sufficient evidence.>
 
 - [ ] Builds locally (`next build`)
 - [ ] Checked in both light and dark theme

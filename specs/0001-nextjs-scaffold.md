@@ -20,7 +20,7 @@ Turn `design/homepage-mockup.html` into a real, running Next.js app, and add the
 - **Stub pages:** `/portfolio`, `/projects`, `/blog`, `/blog/[slug]`, `/photography` all render (share Nav/Footer) but hold placeholder content, not real data.
 - **Content pipeline:** `lib/mdx.ts` (gray-matter + next-mdx-remote) reads `content/blog/*.mdx`; one placeholder post seeded (`hello-world.mdx`) to prove the pipeline end to end.
 - **Sanity client:** `lib/sanity.ts` built defensively — `sanityConfigured` is `false` and every consumer falls back to a placeholder grid when no project ID is set. Verified: app builds and runs with zero Sanity env vars.
-- **Two design gaps resolved:** button hover state (`hover:opacity-90`) and the nav double-border bug class (Tailwind utilities directly on elements, no scoped CSS) — both written back into `design/DESIGN-SYSTEM.md`.
+- **Two design gaps resolved:** button hover state (`hover:opacity-90`) and the nav double-border bug class (Tailwind utilities directly on elements, no scoped CSS) — both written back into `docs/DESIGN-SYSTEM.md`.
 - **Instruction layer:** root `CLAUDE.md` + `README.md`, plus four project skills — `design-system-ui`, `content-authoring`, `sanity-cms` (flagged spec-derived, pending a real Sanity project), `deploy-vercel`.
 
 ## Explicitly not included

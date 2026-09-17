@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 // Replaces the mockup's IIFE. Sections start visible at rest — they only get
 // reveal-pending applied once we know client-side that they're off-screen, so
-// nothing depends on JS running to become visible (design/DESIGN-SYSTEM.md).
+// nothing depends on JS running to become visible (docs/DESIGN-SYSTEM.md).
 export default function ScrollReveal({
   children,
 }: {

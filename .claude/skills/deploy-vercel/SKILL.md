@@ -7,7 +7,7 @@ description: How arpitshah.in deploys to Vercel — required environment variabl
 
 ## Overview
 
-Next.js on Vercel, zero-config, deploying off `main` ([PRD.md §5](../../../PRD.md)). Every PR gets its own preview deployment automatically — see [git-workflow](../git-workflow/SKILL.md) for the PR/merge policy this ties into.
+Next.js on Vercel, zero-config, deploying off `main` ([PRD.md §5](../../../docs/PRD.md)). Every PR gets its own preview deployment automatically — see [git-workflow](../git-workflow/SKILL.md) for the PR/merge policy this ties into.
 
 ## Environment variables
 

@@ -5,7 +5,7 @@ description: How this project (arpitshah.in) writes git commits, branch names, a
 
 # Git Workflow — arpitshah.in
 
-This repo is a solo-owned personal site (Next.js portfolio/blog/photography, see [PRD.md](../../../PRD.md)) that will deploy straight to Vercel off `main`. Two consequences that shape everything below:
+This repo is a solo-owned personal site (Next.js portfolio/blog/photography, see [PRD.md](../../../docs/PRD.md)) that will deploy straight to Vercel off `main`. Two consequences that shape everything below:
 
 1. **`main` must always be deployable.** Every commit that lands on it should be a working state — Vercel auto-deploys on push (PRD §3), so a broken commit on `main` is a broken live site, not just a broken build.
 2. **There's one author, but the history is read by future-you** (and Claude, working from this same repo across many sessions). Clean history isn't for code review overhead — it's so `git log` and `git blame` stay useful as the actual record of _why_ things changed, since PRD.md only captures decisions at a point in time.
@@ -73,7 +73,7 @@ For genuinely spec-less work (a one-line fix, a config tweak): `<type>/<short-de
 Even as a solo project, PRs are worth using for anything larger than a one-line fix — they're the unit Vercel preview-deploys against, and the PR description is where the _why_ for a multi-commit change lives (individual commits stay atomic and narrow; the PR description gives the overview).
 
 - **Title:** same convention as commit subjects (`feat(blog): add MDX post rendering pipeline`).
-- **Description:** use [templates/PULL_REQUEST_TEMPLATE.md](templates/PULL_REQUEST_TEMPLATE.md) — Summary, Changes, Testing (screenshots matter here; this is a visually-designed site, see the [design system](../../../design/DESIGN-SYSTEM.md)), Related PRD section.
+- **Description:** use [templates/PULL_REQUEST_TEMPLATE.md](templates/PULL_REQUEST_TEMPLATE.md) — Summary, Changes, Testing (screenshots matter here; this is a visually-designed site, see the [design system](../../../docs/DESIGN-SYSTEM.md)), Related PRD section.
 - This repo also has `.github/pull_request_template.md`, so GitHub pre-fills this automatically for any PR opened through the GitHub UI or `gh pr create` — keep the two templates in sync if either changes.
 - **Size:** one spec, one PR (see [spec-driven-dev](../spec-driven-dev/SKILL.md)). 0001-nextjs-scaffold shipped as a single ~25k-line PR and that was a mistake, not a model to repeat — if a spec's implementation is turning into something that large, split the spec, not just the commits inside one PR.
 

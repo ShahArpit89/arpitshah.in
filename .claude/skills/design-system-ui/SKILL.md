@@ -9,7 +9,7 @@ description: How to build or edit any page or component for arpitshah.in so it m
 
 Don't restate these here, read them:
 
-- [design/DESIGN-SYSTEM.md](../../../design/DESIGN-SYSTEM.md) — tokens, type, motion, every component's variants/states/accessibility notes
+- [docs/DESIGN-SYSTEM.md](../../../docs/DESIGN-SYSTEM.md) — tokens, type, motion, every component's variants/states/accessibility notes
 - [design/homepage-mockup.html](../../../design/homepage-mockup.html) — the literal finalized reference
 
 This skill is the workflow layer: what to check, in what order, before writing UI code.
