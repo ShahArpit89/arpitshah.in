@@ -1,0 +1,9 @@
+{
+  "title": "Project name",
+  "description": "One or two sentences describing what it does.",
+  "stack": ["TypeScript", "Next.js"],
+  "repoUrl": "https://github.com/ShahArpit89/...",
+  "liveUrl": "",
+  "cover": "",
+  "status": "active"
+}

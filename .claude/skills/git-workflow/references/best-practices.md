@@ -1,11 +1,11 @@
 # Git Best Practices — Rationale & Examples
 
-Background reading for the conventions in [../SKILL.md](../SKILL.md). Load this when you want the *why* behind a rule, or examples to pattern-match against.
+Background reading for the conventions in [../SKILL.md](../SKILL.md). Load this when you want the _why_ behind a rule, or examples to pattern-match against.
 
 ## Where these conventions come from
 
-- **Conventional Commits** (conventionalcommits.org) — the `type(scope): subject` format. Widely adopted because it makes history machine-parseable (changelogs, semantic-version bumps) *and* human-scannable (`git log --oneline` reads like a changelog for free).
-- **Chris Beams' "Seven Rules of a Great Commit Message"** — the classic, still-cited style guide: separate subject from body with a blank line, capitalize subject, no period, imperative mood, wrap body at 72 chars, use the body to explain *what and why* vs. *how*.
+- **Conventional Commits** (conventionalcommits.org) — the `type(scope): subject` format. Widely adopted because it makes history machine-parseable (changelogs, semantic-version bumps) _and_ human-scannable (`git log --oneline` reads like a changelog for free).
+- **Chris Beams' "Seven Rules of a Great Commit Message"** — the classic, still-cited style guide: separate subject from body with a blank line, capitalize subject, no period, imperative mood, wrap body at 72 chars, use the body to explain _what and why_ vs. _how_.
 - **Linux kernel / git project style** — the source of "one logical change per commit" and "the commit message body explains why, the diff explains what."
 
 None of this is arpitshah.in-specific invention — it's the common denominator across the projects that are actually pleasant to `git log` through.
@@ -14,9 +14,9 @@ None of this is arpitshah.in-specific invention — it's the common denominator 
 
 "add hero clock" not "added hero clock" or "adds hero clock". Test: the subject should complete the sentence "If applied, this commit will ___". Git itself uses this convention for auto-generated messages ("Merge branch...", "Revert..."), so imperative keeps hand-written commits consistent with git's own.
 
-## Why the body explains *why*, not *what*
+## Why the body explains _why_, not _what_
 
-The diff is a perfect, complete record of *what* changed — re-describing it in prose is redundant and rots the moment someone refactors nearby code. What the diff *can't* show: why this approach and not the obvious alternative, what constraint or bug report drove it, what tradeoff was accepted. That's the information that's expensive to reconstruct later and cheap to write down now.
+The diff is a perfect, complete record of _what_ changed — re-describing it in prose is redundant and rots the moment someone refactors nearby code. What the diff _can't_ show: why this approach and not the obvious alternative, what constraint or bug report drove it, what tradeoff was accepted. That's the information that's expensive to reconstruct later and cheap to write down now.
 
 Example:
 
@@ -50,7 +50,7 @@ Rule of thumb used in [../SKILL.md](../SKILL.md): if you can't write one clean, 
 
 ## Why squash-and-merge for this repo specifically
 
-Squash-merge is a judgment call, not a universal law — some projects (especially multi-contributor ones needing individual attribution per commit) prefer merge commits or rebase-and-merge instead. It's the right call *here* because:
+Squash-merge is a judgment call, not a universal law — some projects (especially multi-contributor ones needing individual attribution per commit) prefer merge commits or rebase-and-merge instead. It's the right call _here_ because:
 
 - Single owner, so there's no need to preserve individual contributors' commit boundaries.
 - Feature branches will naturally accumulate "wip", "try again", "actually fix build" commits during normal iterative work (including Claude's own iteration inside a branch) — those are valuable as a working log but not as permanent history.

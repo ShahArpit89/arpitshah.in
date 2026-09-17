@@ -109,7 +109,7 @@ Google Fonts import: `Instrument+Serif:ital@0;1`, `Karla:wght@400;500;600;700`, 
 | `variant` | `'primary' \| 'secondary'` | `'primary'` | Visual style |
 | `href` | `string` | — | Renders as `<a>`; buttons here are navigational, not form actions |
 
-**States:** default, hover (mockup has no explicit hover state defined for buttons — **gap**: add a hover treatment, e.g. slight opacity/scale, before shipping; don't leave CTAs static on hover). No disabled/loading state exists yet — add one if any button ever triggers an async action (e.g. a future contact form).
+**States:** default, hover (**resolved** — `hover:opacity-90` with `transition-opacity`, both variants; see `components/Button.tsx`). No disabled/loading state exists yet — add one if any button ever triggers an async action (e.g. a future contact form).
 
 **Accessibility**
 - Role: native `<a>`/`<button>`, no ARIA override needed.
@@ -175,6 +175,6 @@ Simple flex row, mono text, `--ink-soft`, top hairline border. Copyright + link 
 
 ## Watch-Items for Implementation
 
-1. **Nav border bug class:** `.masthead nav` vs `.masthead .nav` caused a real double-line/underline/bullet regression during design review (PRD §4). When porting header markup to a `<Nav>` component, scope selectors explicitly and add a visual regression check (screenshot diff or manual check) for exactly one hairline under the header.
-2. **Button hover state** is undefined in the mockup — decide and document before building the shared `<Button>` component, so Portfolio/Projects/Blog/Photography CTAs don't diverge.
+1. **Nav border bug class:** `.masthead nav` vs `.masthead .nav` caused a real double-line/underline/bullet regression during design review (PRD §4). Resolved in `components/Nav.tsx` by applying Tailwind utilities directly to elements — no hand-rolled scoped CSS class exists to regress.
+2. **Button hover state** — resolved, see Button component section above.
 3. **Spacing scale** isn't tokenized — mockup uses raw Tailwind spacing utilities (`py-14`, `gap-4`, etc.) directly rather than custom properties. Fine to keep using Tailwind's default scale rather than adding redundant custom spacing tokens, but note it's an intentional gap, not an oversight, if a future audit flags "no `--space-*` tokens."
