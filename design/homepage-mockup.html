@@ -1,0 +1,228 @@
+<title>Arpit Shah — Signal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:wght@400;500;600;700&family=Fragment+Mono&display=swap">
+
+<style>
+:root{
+  --paper:#f4f1ea;
+  --paper-raised:#ffffff;
+  --ink:#15161a;
+  --ink-soft:#6c7066;
+  --line:#ded8ca;
+  --flare:#c22a5c;
+  --flare-ink:#fff0f4;
+  --gold:#b9812f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131315;
+    --paper-raised:#1b1b1e;
+    --ink:#efece4;
+    --ink-soft:#98988e;
+    --line:#302f2c;
+    --flare:#ef5c86;
+    --flare-ink:#2a0410;
+    --gold:#dba75a;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131315;
+  --paper-raised:#1b1b1e;
+  --ink:#efece4;
+  --ink-soft:#98988e;
+  --line:#302f2c;
+  --flare:#ef5c86;
+  --flare-ink:#2a0410;
+  --gold:#dba75a;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Karla',-apple-system,Helvetica,Arial,sans-serif;
+}
+.font-display{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;}
+.font-mono{font-family:'Fragment Mono',ui-monospace,Menlo,Consolas,monospace;}
+::selection{background:var(--flare);color:var(--flare-ink);}
+
+@keyframes drift{
+  0%,100%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(2%,-3%) scale(1.04);}
+}
+.blob{
+  background:radial-gradient(closest-side, var(--flare), transparent 72%);
+  opacity:.16;
+  filter:blur(38px);
+  animation:drift 22s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce){
+  .blob{animation:none;}
+}
+
+.reveal-pending{opacity:0;transform:translateY(14px);}
+.reveal-in{opacity:1;transform:translateY(0);transition:opacity .6s ease, transform .6s ease;}
+
+.frame-zoom img,.frame-zoom svg{transition:transform .5s ease;}
+.frame-zoom:hover svg{transform:scale(1.06);}
+
+.underline-grow{position:relative;text-decoration:none;}
+.underline-grow::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:currentColor;
+  transition:right .25s ease;
+}
+.underline-grow:hover::after{right:0;}
+</style>
+
+<div class="max-w-5xl mx-auto px-6">
+
+  <!-- nav -->
+  <header class="sticky z-20 flex flex-wrap items-center justify-between gap-4 py-5 backdrop-blur bg-[var(--paper)]/80" style="top:env(safe-area-inset-top, 0px);">
+    <div class="flex items-baseline gap-3">
+      <span class="font-mono text-sm tracking-wide" style="color:var(--ink)">arpitshah.in</span>
+      <span id="ist-clock" class="font-mono text-xs tabular-nums" style="color:var(--ink-soft)">IST —:—:—</span>
+    </div>
+    <nav class="flex gap-6 font-mono text-xs uppercase tracking-wider" style="color:var(--ink-soft)">
+      <a class="underline-grow hover:text-[var(--flare)]" href="#portfolio">Portfolio</a>
+      <a class="underline-grow hover:text-[var(--flare)]" href="#projects">Projects</a>
+      <a class="underline-grow hover:text-[var(--flare)]" href="#blog">Blog</a>
+      <a class="underline-grow hover:text-[var(--flare)]" href="#photography">Photography</a>
+    </nav>
+  </header>
+
+  <!-- hero -->
+  <section id="portfolio" class="relative pt-10 pb-16 overflow-hidden">
+    <div class="blob absolute -top-10 -right-16 w-72 h-72 rounded-full pointer-events-none"></div>
+
+    <p class="font-mono text-xs uppercase tracking-[.18em]" style="color:var(--gold)">Bengaluru — Software Engineer</p>
+
+    <h1 class="font-display italic mt-3 text-4xl sm:text-5xl md:text-6xl leading-[1.08] max-w-3xl" style="text-wrap:balance;">
+      Hi, I'm Arpit — I build <span style="color:var(--flare)">applied&#8209;AI</span> products, end to end.
+    </h1>
+
+    <p class="mt-6 text-lg leading-relaxed max-w-xl" style="color:var(--ink-soft)">
+      Want the details? Here's my <a class="underline-grow" style="color:var(--ink)" href="#portfolio">full portfolio</a>, or jump straight into <a class="underline-grow" style="color:var(--ink)" href="#projects">recent projects</a>. Most days that means model integration and the backend systems holding it together — lately, <strong style="color:var(--ink)">MacFileDedup</strong>, a macOS app for clearing out duplicate files, plus a run of internal tools that put LLMs to work on real, unglamorous problems.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mt-8">
+      <a href="#portfolio" class="px-6 py-3 text-sm font-mono uppercase tracking-wide rounded-full" style="background:var(--ink);color:var(--paper)">View portfolio →</a>
+      <a href="#projects" class="px-6 py-3 text-sm font-mono uppercase tracking-wide rounded-full border" style="border-color:var(--ink);color:var(--ink)">See projects</a>
+    </div>
+  </section>
+
+  <div class="h-px w-full" style="background:var(--line)"></div>
+
+  <!-- blog -->
+  <section id="blog" data-reveal class="py-14">
+    <div class="flex items-end justify-between gap-4 flex-wrap mb-8">
+      <h2 class="font-display italic text-3xl">From the blog</h2>
+      <a class="underline-grow font-mono text-xs uppercase tracking-wide" style="color:var(--flare)" href="#">All posts →</a>
+    </div>
+
+    <ul class="flex flex-col">
+      <li class="group grid grid-cols-[90px_1fr_auto] sm:grid-cols-[110px_1fr_auto] items-baseline gap-4 py-5 border-t" style="border-color:var(--line)">
+        <time class="font-mono text-xs" style="color:var(--ink-soft)">Sep 2026</time>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-wider mb-1" style="color:var(--flare)">Engineering</div>
+          <h3 class="text-lg font-semibold group-hover:opacity-70 transition">Why I rewrote MacFileDedup's hashing pipeline</h3>
+        </div>
+        <a href="#" class="hidden sm:block font-mono text-xs self-center" style="color:var(--ink-soft)">Read →</a>
+      </li>
+      <li class="group grid grid-cols-[90px_1fr_auto] sm:grid-cols-[110px_1fr_auto] items-baseline gap-4 py-5 border-t" style="border-color:var(--line)">
+        <time class="font-mono text-xs" style="color:var(--ink-soft)">Aug 2026</time>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-wider mb-1" style="color:var(--gold)">Photography</div>
+          <h3 class="text-lg font-semibold group-hover:opacity-70 transition">Three mornings waiting on a kingfisher</h3>
+        </div>
+        <a href="#" class="hidden sm:block font-mono text-xs self-center" style="color:var(--ink-soft)">Read →</a>
+      </li>
+      <li class="group grid grid-cols-[90px_1fr_auto] sm:grid-cols-[110px_1fr_auto] items-baseline gap-4 py-5 border-t border-b" style="border-color:var(--line)">
+        <time class="font-mono text-xs" style="color:var(--ink-soft)">Jul 2026</time>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-wider mb-1" style="color:var(--flare)">Engineering</div>
+          <h3 class="text-lg font-semibold group-hover:opacity-70 transition">Notes on prompt caching for small tools</h3>
+        </div>
+        <a href="#" class="hidden sm:block font-mono text-xs self-center" style="color:var(--ink-soft)">Read →</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- photography, last -->
+  <section id="photography" data-reveal class="py-14 pb-20">
+    <div class="flex items-end justify-between gap-4 flex-wrap mb-2">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[.14em]" style="color:var(--gold)">Also</p>
+        <h2 class="font-display italic text-3xl mt-1">Frames from the field</h2>
+      </div>
+      <a class="underline-grow font-mono text-xs uppercase tracking-wide" style="color:var(--gold)" href="#">Open the gallery →</a>
+    </div>
+    <p class="mt-2 mb-8 max-w-md" style="color:var(--ink-soft)">Birds, big cats, and whatever shows up before the light does — shot between projects.</p>
+
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-3">
+      <figure class="frame-zoom aspect-square overflow-hidden rounded-md border" style="border-color:var(--line)">
+        <svg viewBox="0 0 200 200" class="w-full h-full block"><rect width="200" height="200" fill="#233318"/><circle cx="100" cy="100" r="46" fill="#7c9459"/></svg>
+      </figure>
+      <figure class="frame-zoom aspect-square overflow-hidden rounded-md border" style="border-color:var(--line)">
+        <svg viewBox="0 0 200 200" class="w-full h-full block"><rect width="200" height="200" fill="#3a2a17"/><ellipse cx="100" cy="120" rx="80" ry="36" fill="#c68a45"/></svg>
+      </figure>
+      <figure class="frame-zoom aspect-square overflow-hidden rounded-md border" style="border-color:var(--line)">
+        <svg viewBox="0 0 200 200" class="w-full h-full block"><rect width="200" height="200" fill="#12212b"/><circle cx="120" cy="75" r="26" fill="#e8dcb8"/></svg>
+      </figure>
+      <figure class="frame-zoom aspect-square overflow-hidden rounded-md border" style="border-color:var(--line)">
+        <svg viewBox="0 0 200 200" class="w-full h-full block"><rect width="200" height="200" fill="#20140a"/><polygon points="0,150 100,80 200,160 200,200 0,200" fill="#4a3016"/></svg>
+      </figure>
+      <figure class="frame-zoom aspect-square overflow-hidden rounded-md border" style="border-color:var(--line)">
+        <svg viewBox="0 0 200 200" class="w-full h-full block"><rect width="200" height="200" fill="#2c1f10"/><circle cx="100" cy="95" r="34" fill="#f3d9a4"/></svg>
+      </figure>
+      <figure class="frame-zoom aspect-square overflow-hidden rounded-md border" style="border-color:var(--line)">
+        <svg viewBox="0 0 200 200" class="w-full h-full block"><rect width="200" height="200" fill="#1c2a1a"/><rect y="130" width="200" height="70" fill="#0e1710"/><circle cx="70" cy="90" r="20" fill="#d8c79a"/></svg>
+      </figure>
+    </div>
+    <p class="font-mono text-[11px] mt-3" style="color:var(--ink-soft)">placeholder frames — real selects go here</p>
+  </section>
+
+  <footer class="flex flex-wrap justify-between gap-3 py-8 border-t font-mono text-xs" style="border-color:var(--line);color:var(--ink-soft)">
+    <span>© 2026 Arpit Shah</span>
+    <span>arpitshah.in — GitHub · Instagram · Email</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var clock = document.getElementById('ist-clock');
+  function tick(){
+    var ist = new Date(new Date().toLocaleString('en-US', {timeZone:'Asia/Kolkata'}));
+    var hh = String(ist.getHours()).padStart(2,'0');
+    var mm = String(ist.getMinutes()).padStart(2,'0');
+    var ss = String(ist.getSeconds()).padStart(2,'0');
+    clock.textContent = 'IST ' + hh + ':' + mm + ':' + ss;
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var sections = document.querySelectorAll('[data-reveal]');
+  var vh = window.innerHeight;
+  sections.forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top > vh){
+      el.classList.add('reveal-pending');
+    }
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.remove('reveal-pending');
+        entry.target.classList.add('reveal-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  sections.forEach(function(el){
+    if(el.classList.contains('reveal-pending')) io.observe(el);
+  });
+})();
+</script>
