@@ -8,6 +8,10 @@ Three documents are the source of truth — this file orients you to them, it do
 - **Visual system** (tokens, type, components) → [design/DESIGN-SYSTEM.md](design/DESIGN-SYSTEM.md)
 - **Git conventions** (commits, branches, PRs) → [.claude/skills/git-workflow/SKILL.md](.claude/skills/git-workflow/SKILL.md)
 
+## How work happens here
+
+This project develops step by step from written specs, not big batched changes — see [.claude/skills/spec-driven-dev/SKILL.md](.claude/skills/spec-driven-dev/SKILL.md). Before starting any non-trivial task: check [specs/README.md](specs/README.md) for current status (what's Done vs Planned), write a spec if one doesn't exist yet, get it confirmed, then implement only that spec's scope on a matching `spec/NNNN-slug` branch. Don't batch multiple specs into one PR.
+
 ## Running it
 
 ```bash

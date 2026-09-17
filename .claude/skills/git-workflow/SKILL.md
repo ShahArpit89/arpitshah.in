@@ -64,7 +64,9 @@ The test: could you revert this single commit cleanly without dragging in an unr
 
 ## Branch naming
 
-`<type>/<short-description>`, matching the commit type vocabulary above: `feat/photography-gallery`, `fix/nav-double-border`, `docs/design-system`. Kebab-case, no ticket-number-only names (a branch called `fix/123` tells a reader nothing six months later).
+For anything with a spec (see [spec-driven-dev](../spec-driven-dev/SKILL.md) — most non-trivial work): `spec/NNNN-slug`, matching the spec file's own name in `specs/`.
+
+For genuinely spec-less work (a one-line fix, a config tweak): `<type>/<short-description>`, matching the commit type vocabulary above — `fix/nav-double-border`, `chore/update-gitignore`. Kebab-case, no ticket-number-only names (a branch called `fix/123` tells a reader nothing six months later).
 
 ## Pull requests
 
@@ -73,6 +75,7 @@ Even as a solo project, PRs are worth using for anything larger than a one-line 
 - **Title:** same convention as commit subjects (`feat(blog): add MDX post rendering pipeline`).
 - **Description:** use [templates/PULL_REQUEST_TEMPLATE.md](templates/PULL_REQUEST_TEMPLATE.md) — Summary, Changes, Testing (screenshots matter here; this is a visually-designed site, see the [design system](../../../design/DESIGN-SYSTEM.md)), Related PRD section.
 - This repo also has `.github/pull_request_template.md`, so GitHub pre-fills this automatically for any PR opened through the GitHub UI or `gh pr create` — keep the two templates in sync if either changes.
+- **Size:** one spec, one PR (see [spec-driven-dev](../spec-driven-dev/SKILL.md)). 0001-nextjs-scaffold shipped as a single ~25k-line PR and that was a mistake, not a model to repeat — if a spec's implementation is turning into something that large, split the spec, not just the commits inside one PR.
 
 ## Keeping history clean: merge policy
 
