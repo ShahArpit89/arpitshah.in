@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0007-photography-real-content
 prd_ref: '§2, §3, §7 item 4'
+github_issue: 17
 ---
 
 # 0007 — Real photos through Sanity

@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0006-studio-route
 prd_ref: '§3, §6, §8'
+github_issue: 16
 ---
 
 # 0006 — Resolve Studio embed vs. subdomain, build `/studio`

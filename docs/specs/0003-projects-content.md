@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0003-projects-content
 prd_ref: '§2, §3'
+github_issue: 13
 ---
 
 # 0003 — Real project entries

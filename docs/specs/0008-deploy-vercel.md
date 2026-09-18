@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0008-deploy-vercel
 prd_ref: '§5, §7 item 5'
+github_issue: 18
 ---
 
 # 0008 — First Vercel deploy

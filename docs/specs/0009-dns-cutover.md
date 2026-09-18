@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0009-dns-cutover
 prd_ref: '§7 item 5'
+github_issue: 19
 ---
 
 # 0009 — DNS cutover
