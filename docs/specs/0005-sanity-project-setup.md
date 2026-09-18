@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0005-sanity-project-setup
 prd_ref: '§3, §7 item 3'
+github_issue: 15
 ---
 
 # 0005 — Create Sanity project, wire real config

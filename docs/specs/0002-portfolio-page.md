@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0002-portfolio-page
 prd_ref: '§2'
+github_issue: 12
 ---
 
 # 0002 — Portfolio page

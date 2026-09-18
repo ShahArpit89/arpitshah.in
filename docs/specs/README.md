@@ -16,6 +16,6 @@ One markdown file per unit of work, written _before_ implementation starts. This
 | [0008-deploy-vercel](0008-deploy-vercel.md)                       | Planned | First production deploy                              |
 | [0009-dns-cutover](0009-dns-cutover.md)                           | Planned | Point arpitshah.in at Vercel                         |
 | [0010-docs-folder](0010-docs-folder.md)                           | Done    | Move PRD.md/DESIGN-SYSTEM.md into docs/              |
-| [0011-github-actions-ci](0011-github-actions-ci.md)               | Planned | CI (lint/typecheck/build/format) + Dependabot        |
+| [0011-github-actions-ci](0011-github-actions-ci.md)               | Done    | CI (lint/typecheck/build/format) + Dependabot        |
 
 Update this table's Status column as specs move Planned → In Progress → Done.

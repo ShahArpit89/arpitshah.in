@@ -13,10 +13,24 @@ This repo was built once as one large batched PR (0001-nextjs-scaffold) and it c
 
 1. Create `docs/specs/NNNN-slug.md` from the template (`NNNN` = next number, `slug` = kebab-case short name).
 2. Get it confirmed before writing code — even a one-line "yes, that scope is right" from Arpit. A spec nobody agreed to is just a plan you wrote for yourself.
-3. Create branch `spec/NNNN-slug` — matching the spec file's own name, so branch and spec are always traceable to each other.
-4. Implement **only what the spec's Scope section says is in.** If you discover the task is bigger than the spec assumed, stop and split it into a follow-up spec rather than quietly expanding scope mid-implementation.
-5. Open a PR from that branch. Keep it small enough to actually review — if a spec's implementation is inherently large, that's a signal the spec itself should have been split into smaller specs, not that the PR should just be big.
-6. Update the spec's `status` frontmatter (Planned → In Progress → Done) and [docs/specs/README.md](../../../docs/specs/README.md)'s index as work progresses.
+3. Create a GitHub Issue from the confirmed spec (see "GitHub Issues" below) and record its number in the spec's `github_issue` frontmatter field.
+4. Create branch `spec/NNNN-slug` — matching the spec file's own name, so branch and spec are always traceable to each other.
+5. Implement **only what the spec's Scope section says is in.** If you discover the task is bigger than the spec assumed, stop and split it into a follow-up spec rather than quietly expanding scope mid-implementation.
+6. Open a PR from that branch, with `Closes #N` in the description so merging auto-closes the tracking issue. Keep it small enough to actually review — if a spec's implementation is inherently large, that's a signal the spec itself should have been split into smaller specs, not that the PR should just be big.
+7. Update the spec's `status` frontmatter (Planned → In Progress → Done) and [docs/specs/README.md](../../../docs/specs/README.md)'s index as work progresses.
+
+## GitHub Issues
+
+Every spec gets exactly one tracking issue, created right after the spec is confirmed (step 3 above). The issue is the _operational_ status layer — open/closed, assignee, project board — while the spec file stays the _technical_ record (Goal/Scope/Approach/Acceptance criteria). Don't duplicate one into the other beyond what's needed for the issue to stand alone:
+
+- **Title:** `[NNNN] <spec title>` — e.g. `[0002] Real Portfolio page content`.
+- **Body:** the spec's Goal, its Acceptance criteria reproduced as a literal `- [ ]` checklist (GitHub renders these as trackable checkboxes), its Dependencies, and a link to the spec file. Don't restate Scope or Approach — link instead.
+- The spec's `github_issue: N` frontmatter field points at the issue; the issue body links back to the spec — traceable both ways, same pattern as `branch:`.
+- Closing happens automatically via the PR's `Closes #N`, not manually — if a spec turns out not needed, close its issue with a reason instead of leaving it to rot open.
+
+## Sequential vs. parallel implementation
+
+Default to one issue/spec at a time. Multiple specs can be implemented in parallel (separate sessions or worktrees, each on its own `spec/NNNN-slug` branch) only when each spec's own **Dependencies** section confirms there's no ordering constraint between them _and_ their Scope sections don't touch the same files — check both before starting, don't assume. When in doubt, stay sequential; a merge conflict between two "parallel" specs costs more than the time saved.
 
 ## What counts as "a task"
 

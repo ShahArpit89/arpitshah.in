@@ -2,6 +2,7 @@
 status: Planned   <!-- Planned | In Progress | Done -->
 branch: spec/NNNN-slug
 prd_ref: "§X"      <!-- section of PRD.md this implements, if any -->
+github_issue: N    <!-- filled in once the tracking issue is created, right after this spec is confirmed -->
 ---
 
 # NNNN — Title

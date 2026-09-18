@@ -2,6 +2,7 @@
 status: Planned
 branch: spec/0004-blog-real-post
 prd_ref: '§2, §3'
+github_issue: 14
 ---
 
 # 0004 — Replace placeholder blog post with real content
