@@ -1,5 +1,5 @@
 ---
-status: In Progress
+status: Done
 branch: spec/0011-github-actions-ci
 prd_ref: none
 ---
@@ -35,6 +35,8 @@ Dependabot config groups minor/patch npm updates to reduce PR noise where reason
 
 Branch protection itself can't be expressed as a repo file — it's configured in GitHub's Settings → Branches UI (or via the GitHub API with admin rights this session doesn't have a tool for). This spec's acceptance criteria call it out as a manual step for Arpit to complete once the workflow's check name exists to select.
 
+One thing not anticipated when this spec was written: GitHub doesn't enforce classic branch protection rules on a private repo on the free plan (it saves the rule but shows "won't be enforced until you move to a GitHub Team or Enterprise account"). Arpit chose to make the repo public rather than pay for Team/Enterprise — the repo has no committed secrets (verified: `.env*` has never been committed, `.gitignore` covers it, `.env.example` only has empty placeholder values), so public visibility for a portfolio site is a reasonable trade.
+
 ## Acceptance criteria
 
 - [x] `.github/workflows/ci.yml` exists and runs lint/typecheck/build/format-check on every PR against `main` and every push to `main`
@@ -42,7 +44,7 @@ Branch protection itself can't be expressed as a repo file — it's configured i
 - [x] A clean PR shows all steps passing — verified on [PR #5](https://github.com/ShahArpit89/arpitshah.in/pull/5), run [35288755824](https://github.com/ShahArpit89/arpitshah.in/actions/runs/35288755824), conclusion `success`
 - [x] `format:check` script added to `package.json`; existing `format` script's write behavior unchanged
 - [x] `.github/dependabot.yml` exists for `npm` and `github-actions` ecosystems, weekly schedule
-- [ ] Arpit has enabled branch protection on `main` requiring the CI check before merge (manual, still outstanding — the check now exists on `main` and is selectable)
+- [x] Arpit has enabled branch protection on `main` requiring the CI check before merge — verified via GitHub API: repo `visibility: public`, `main` branch `protected: true`
 
 ## Dependencies
 
