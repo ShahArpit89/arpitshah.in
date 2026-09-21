@@ -1,5 +1,5 @@
 ---
-status: In Progress
+status: Done
 branch: spec/0012-testing-infrastructure
 prd_ref: none
 github_issue: 22
@@ -46,7 +46,7 @@ CI's `npm run test` step goes after `typecheck` and before `build` in `ci.yml` â
 - [x] `npm run test` runs Vitest and passes locally
 - [x] `test/smoke.test.tsx` renders a trivial component via React Testing Library, asserts with a `jest-dom` matcher, and passes
 - [x] The smoke test (or a dedicated config test) imports a module via the `@/` alias, proving `vitest.config.ts` resolves it the same way `tsconfig.json` does
-- [ ] `.github/workflows/ci.yml` runs `npm run test` and a CI run on this spec's own PR shows it passing
+- [x] `.github/workflows/ci.yml` runs `npm run test` and a CI run on this spec's own PR shows it passing â€” verified on [PR #25](https://github.com/ShahArpit89/arpitshah.in/pull/25), run [35594628686](https://github.com/ShahArpit89/arpitshah.in/actions/runs/35594628686), conclusion `success`
 - [x] `npm run typecheck` and `npm run lint` stay clean with the new config/test files in the tree
 
 ## Dependencies
