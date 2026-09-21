@@ -18,6 +18,6 @@ One markdown file per unit of work, written _before_ implementation starts. This
 | [0010-docs-folder](0010-docs-folder.md)                           | Done    | Move PRD.md/DESIGN-SYSTEM.md into docs/                 |
 | [0011-github-actions-ci](0011-github-actions-ci.md)               | Done    | CI (lint/typecheck/build/format) + Dependabot           |
 | [0012-testing-infrastructure](0012-testing-infrastructure.md)     | Done    | Vitest + React Testing Library harness, CI wiring       |
-| [0013-lib-unit-tests](0013-lib-unit-tests.md)                     | Planned | Unit tests for `lib/mdx.ts`, `projects.ts`, `sanity.ts` |
+| [0013-lib-unit-tests](0013-lib-unit-tests.md)                     | Done    | Unit tests for `lib/mdx.ts`, `projects.ts`, `sanity.ts` |
 
 Update this table's Status column as specs move Planned → In Progress → Done.
