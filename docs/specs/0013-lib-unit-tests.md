@@ -1,5 +1,5 @@
 ---
-status: In Progress
+status: Done
 branch: spec/0013-lib-unit-tests
 prd_ref: none
 github_issue: 23
@@ -48,7 +48,7 @@ One addition discovered during implementation, not called out in the mocking str
 - [x] `lib/mdx.test.ts` covers `getAllPostSlugs`, `getPostBySlug`, and `getAllPosts` (including the empty-directory and sort-order cases) — all passing
 - [x] `lib/projects.test.ts` covers `getAllProjects` for both a present and a missing `content/projects.json` — passing
 - [x] `lib/sanity.test.ts` covers both the unconfigured branch (`client`/`sanityConfigured`/`urlFor`/`getPhotos` behavior with no env var) and the configured branch (`getPhotos` calling a mocked client's `fetch` with the right query) — passing
-- [ ] `npm run test` (from 0012's CI step) stays green with this suite added
+- [x] `npm run test` (from 0012's CI step) stays green with this suite added — verified on [PR #26](https://github.com/ShahArpit89/arpitshah.in/pull/26), run [35595260422](https://github.com/ShahArpit89/arpitshah.in/actions/runs/35595260422), conclusion `success`
 - [x] None of these tests depend on the real contents of `content/blog/` or `content/projects.json` — verified by the suite still passing if those are temporarily renamed locally
 
 ## Dependencies
