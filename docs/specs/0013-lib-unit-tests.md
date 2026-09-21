@@ -1,5 +1,5 @@
 ---
-status: Planned
+status: In Progress
 branch: spec/0013-lib-unit-tests
 prd_ref: none
 github_issue: 23
@@ -41,13 +41,15 @@ Backfill tests for the three modules every page render depends on — `lib/mdx.t
 
 Requires 0012's Vitest setup (config, jsdom environment, co-located `*.test.ts` convention) to already exist.
 
+One addition discovered during implementation, not called out in the mocking strategy above: `lib/sanity.ts` calls `imageUrlBuilder(client)` at module load time whenever `client` is non-null (not lazily inside `urlFor()`), so the configured-branch test also needs `@sanity/image-url`'s default export mocked — otherwise it would run against whatever shape the mocked `next-sanity` client happens to have, which isn't what this spec is testing. `urlFor()`'s success path when configured is still untested (not required by the acceptance criteria below); only that it throws when unconfigured.
+
 ## Acceptance criteria
 
-- [ ] `lib/mdx.test.ts` covers `getAllPostSlugs`, `getPostBySlug`, and `getAllPosts` (including the empty-directory and sort-order cases) — all passing
-- [ ] `lib/projects.test.ts` covers `getAllProjects` for both a present and a missing `content/projects.json` — passing
-- [ ] `lib/sanity.test.ts` covers both the unconfigured branch (`client`/`sanityConfigured`/`urlFor`/`getPhotos` behavior with no env var) and the configured branch (`getPhotos` calling a mocked client's `fetch` with the right query) — passing
+- [x] `lib/mdx.test.ts` covers `getAllPostSlugs`, `getPostBySlug`, and `getAllPosts` (including the empty-directory and sort-order cases) — all passing
+- [x] `lib/projects.test.ts` covers `getAllProjects` for both a present and a missing `content/projects.json` — passing
+- [x] `lib/sanity.test.ts` covers both the unconfigured branch (`client`/`sanityConfigured`/`urlFor`/`getPhotos` behavior with no env var) and the configured branch (`getPhotos` calling a mocked client's `fetch` with the right query) — passing
 - [ ] `npm run test` (from 0012's CI step) stays green with this suite added
-- [ ] None of these tests depend on the real contents of `content/blog/` or `content/projects.json` — verified by the suite still passing if those are temporarily renamed locally
+- [x] None of these tests depend on the real contents of `content/blog/` or `content/projects.json` — verified by the suite still passing if those are temporarily renamed locally
 
 ## Dependencies
 
